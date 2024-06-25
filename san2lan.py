@@ -1553,3 +1553,27 @@ def convert_to_fen(board, separator='.'):
     
     return fen
 
+def is_square_occupied(pos : str) -> bool:
+
+    l = [pc[0] for pc in white_pieces.values()] + [pc[0] for pc in black_pieces.values()]
+    
+    return pos in l
+
+def is_square_attacked(pos : str) -> bool:
+    l = []
+
+    for k,v in black_pieces.items():
+
+        if k[0] != 'p':
+            l += v[1]
+        else:    
+            l += v[2]
+
+    for k,v in white_pieces.items():
+            
+        if k[0] != 'P':
+            l += v[1]
+        else:
+            l += v[2]
+
+    return pos in l
