@@ -436,7 +436,7 @@ def update_all():
         elif k[0] == 'K':
             v[1] = possible_king(conversion2(v[0]))
 
-        elif k[0] == 'p':
+        elif k[0] == 'P':
             v[1] = possible_pawn(conversion2(v[0]))
             v[2] = possible_pawn_take(conversion2(v[0]))
 
